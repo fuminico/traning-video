@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n8nクラウド契約のご提案 - 研修動画自動作成システムの運用に向けて</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 32px;
+            margin-bottom: 15px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid #ff6d5a;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #ff6d5a 0%, #ff8774 100%);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #ff6d5a;
+        }
+        
+        .important-box {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .important-box h3 {
+            color: #856404;
+            margin-top: 0;
+            border-left: none;
+            padding-left: 0;
+            font-size: 22px;
+        }
+        
+        .plan-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .plan-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .plan-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .plan-cost {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .plan-url {
+            background: #ecf0f1;
+            padding: 12px 18px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .plan-url a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .plan-url a:hover {
+            text-decoration: underline;
+        }
+        
+        .feature-list {
+            background: #e8f5e9;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .feature-list ul {
+            margin-left: 20px;
+        }
+        
+        .feature-list li {
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table .highlight {
+            background: #ffe5e5;
+            font-weight: bold;
+        }
+        
+        .recommended-row {
+            background: #d4edda;
+            font-weight: bold;
+        }
+        
+        .recommended-row td {
+            border-top: 3px solid #28a745;
+            padding: 20px 15px;
+        }
+        
+        .steps-box {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .steps-box h4 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .steps-box ol {
+            margin-left: 25px;
+        }
+        
+        .steps-box li {
+            margin: 15px 0;
+            padding-left: 10px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .badge-recommended {
+            background: #28a745;
+            color: white;
+        }
+        
+        .badge-basic {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .alert {
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 5px solid;
+        }
+        
+        .alert-warning {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+        
+        .alert-info {
+            background: #d1ecf1;
+            border-color: #0c5460;
+            color: #0c5460;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ff6d5a;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 10px 10px 10px 0;
+        }
+        
+        .button:hover {
+            background: #ff5542;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #ff6d5a 0%, #ff8774 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .contact-section h3 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+            padding: 0;
+        }
+        
+        .benefit-box {
+            background: #e3f2fd;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>n8nクラウド契約のご提案</h1>
+        <p class="subtitle">研修動画自動作成システムの運用に向けて - 担当: 三井田史親</p>
+        
+        <div class="important-box">
+            <h3>📋 本提案の目的</h3>
+            <p style="font-size: 18px; margin-top: 15px;">
+                現在開発中の<strong>「PowerPointスライドから研修動画を自動生成するシステム」</strong>をチーム全体で運用するため、n8nクラウドサービスの契約をご提案いたします。
+            </p>
+            <ul style="margin: 20px 0 10px 25px; font-size: 16px;">
+                <li><strong>システムの機能</strong>: PPTXファイルをアップロードすると、自動でナレーション付き研修動画を生成</li>
+                <li><strong>現在の課題</strong>: ローカル環境（私のPC上）でのみ動作し、他メンバーが利用できない</li>
+                <li><strong>解決策</strong>: n8nクラウドに移行することで、チーム全員がいつでもどこでも利用可能に</li>
+            </ul>
+        </div>
+
+        <h2>1. n8nとは？</h2>
+        
+        <div class="plan-card">
+            <p style="font-size: 16px; line-height: 1.8;">
+                <strong>n8n</strong>は、複数のクラウドサービスを連携させて業務を自動化するワークフロー自動化ツールです。<br><br>
+                
+                今回開発した研修動画自動作成システムでは、以下の流れを自動化しています：
+            </p>
+            <div class="feature-list" style="margin-top: 20px;">
+                <ul>
+                    <li><strong>Step 1:</strong> Google Driveから研修用PPTXファイルを取得</li>
+                    <li><strong>Step 2:</strong> CloudConvert APIでスライドを画像に変換</li>
+                    <li><strong>Step 3:</strong> OpenAI APIでスライド内容を解析し、ナレーション原稿を生成</li>
+                    <li><strong>Step 4:</strong> OpenAI TTSでナレーション音声を生成</li>
+                    <li><strong>Step 5:</strong> Shotstack APIで画像と音声を組み合わせて動画を作成</li>
+                    <li><strong>Step 6:</strong> 完成した動画をGoogle Driveに保存</li>
+                </ul>
+            </div>
+            <p style="margin-top: 20px; font-size: 16px;">
+                これらの複雑な処理を<strong>n8nが一括で自動実行</strong>することで、手作業では数時間かかる作業が<strong>数十分で完了</strong>します。
+            </p>
+        </div>
+
+        <h2>2. n8nクラウドプラン比較</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>プラン名</th>
+                    <th>月額料金</th>
+                    <th>実行回数</th>
+                    <th>ユーザー数</th>
+                    <th>主な機能</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="recommended-row">
+                    <td><strong>Starter</strong><span class="badge badge-recommended">推奨</span></td>
+                    <td>€20/月<br>(約3,640円)</td>
+                    <td>2,500回/月</td>
+                    <td>無制限</td>
+                    <td>
+                        • 1つの共有プロジェクト<br>
+                        • 5つの同時実行<br>
+                        • フォーラムサポート<br>
+                        • 14日間無料トライアル
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Pro</strong><span class="badge badge-basic">上位プラン</span></td>
+                    <td>€50/月<br>(約9,100円)</td>
+                    <td>10,000回/月</td>
+                    <td>無制限</td>
+                    <td>
+                        • 3つの共有プロジェクト<br>
+                        • 20の同時実行<br>
+                        • ワークフロー履歴<br>
+                        • グローバル変数<br>
+                        • 管理者ロール
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-success">
+            <strong>✅ 推奨プラン: Starter (€20/月 = 約3,640円)</strong><br><br>
+            ワークフロー共有が主な目的であれば、<strong>Starterプラン</strong>で十分です。<br>
+            • 無制限のユーザー数とワークフロー数<br>
+            • チームメンバー全員がアクセス可能<br>
+            • 月2,500回の実行で多くの自動化をカバー<br>
+            • 14日間の無料トライアルでお試し可能
+        </div>
+
+        <h2>3. 推奨プラン: Starter（€20/月）</h2>
+        
+        <div class="plan-card">
+            <div class="plan-header">
+                <div class="plan-name">n8n Starter <span class="badge badge-recommended">推奨</span></div>
+                <div class="plan-cost">€20/月</div>
+            </div>
+            
+            <div class="plan-url">
+                🔗 <a href="https://n8n.io/pricing/" target="_blank">https://n8n.io/pricing/</a>
+            </div>
+            
+            <h3>含まれる機能</h3>
+            <div class="feature-list">
+                <ul>
+                    <li><strong>2,500回/月のワークフロー実行</strong> - ステップ数無制限</li>
+                    <li><strong>無制限のユーザー数</strong> - チーム全員が利用可能</li>
+                    <li><strong>無制限のワークフロー数</strong> - いくつでも作成できます</li>
+                    <li><strong>1つの共有プロジェクト</strong> - チームでワークフローを管理</li>
+                    <li><strong>5つの同時実行</strong> - 複数ワークフローを並行実行</li>
+                    <li><strong>すべての統合機能</strong> - 1,000以上のアプリ連携</li>
+                    <li><strong>フォーラムサポート</strong> - コミュニティによるサポート</li>
+                    <li><strong>14日間の無料トライアル</strong> - クレジットカード不要</li>
+                </ul>
+            </div>
+            
+            <div class="benefit-box">
+                <strong>💡 「実行回数」とは？</strong><br><br>
+                n8nの料金は「実行回数」で計算されます。これは他のツールの「タスク数」や「ステップ数」とは異なり、<strong>ワークフロー全体の1回の実行</strong>を指します。<br><br>
+                例: 10ステップのワークフローを1回実行 = 1回の実行としてカウント<br>
+                （他のツールでは10タスクとしてカウントされることも）<br><br>
+                <strong>→ 他社サービスと比較して非常にコスト効率が良い料金体系です</strong>
+            </div>
+            
+            <h3>実行回数の目安</h3>
+            <div class="feature-list">
+                <ul>
+                    <li><strong>1時間ごとに実行するワークフロー</strong>: 約720回/月</li>
+                    <li><strong>1日1回実行するワークフロー</strong>: 約30回/月</li>
+                    <li><strong>週1回実行するワークフロー</strong>: 約4回/月</li>
+                    <li><strong>Webhook経由（イベント発生時）</strong>: 発生頻度による</li>
+                </ul>
+            </div>
+            
+            <p style="margin-top: 15px;">
+                <strong>研修動画作成ワークフローの場合:</strong><br>
+                手動実行または必要に応じて実行するため、月2,500回で十分対応できます。
+            </p>
+        </div>
+
+        <h2>4. 契約手順（概要）</h2>
+        
+        <div class="steps-box">
+            <h4>📋 会社契約の流れ</h4>
+            <ol>
+                <li>
+                    <strong>14日間無料トライアルを開始</strong><br>
+                    <a href="https://n8n.io/pricing/" target="_blank" class="button">n8n公式サイトへ</a><br>
+                    • 会社のメールアドレスで登録（クレジットカード不要）<br>
+                    • 2週間すべての機能を無料でお試し可能
+                </li>
+                
+                <li>
+                    <strong>設定・動作確認（1〜2日で完了）</strong><br>
+                    • ワークフローの移行作業（三井田が担当）<br>
+                    • 動作テスト<br>
+                    • チームメンバーへのアクセス権付与
+                </li>
+                
+                <li>
+                    <strong>会社として有料契約へ移行</strong><br>
+                    • トライアル終了後、会社のクレジットカード情報を登録<br>
+                    • €20/月（約3,640円）の課金開始<br>
+                    • いつでもキャンセル可能（月額契約の場合）
+                </li>
+            </ol>
+        </div>
+        
+        <div class="alert alert-info">
+            <strong>💳 支払い方法</strong><br><br>
+            • <strong>月額契約</strong>: €20/月（約3,640円）- いつでもキャンセル可<br>
+            • <strong>年間契約</strong>: €240/年 → <strong>17%割引で€204/年（約37,200円）</strong><br>
+            • 支払い方法: 会社クレジットカード、デビットカード<br>
+            • 年間契約の場合は銀行振込・請求書払いにも対応可能
+        </div>
+
+        <h2>5. 導入メリット（ローカル環境との比較）</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>項目</th>
+                    <th>ローカル環境（現在）</th>
+                    <th>n8nクラウド（契約後）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>アクセス</strong></td>
+                    <td>自分のPC上でのみ動作</td>
+                    <td class="highlight">どこからでもブラウザでアクセス可能</td>
+                </tr>
+                <tr>
+                    <td><strong>共有</strong></td>
+                    <td>共有不可</td>
+                    <td class="highlight">チームメンバー全員がアクセス可能</td>
+                </tr>
+                <tr>
+                    <td><strong>稼働時間</strong></td>
+                    <td>PCを起動している間のみ</td>
+                    <td class="highlight">24時間365日稼働</td>
+                </tr>
+                <tr>
+                    <td><strong>メンテナンス</strong></td>
+                    <td>自分で管理が必要</td>
+                    <td class="highlight">n8nが自動アップデート・保守</td>
+                </tr>
+                <tr>
+                    <td><strong>バックアップ</strong></td>
+                    <td>手動でバックアップが必要</td>
+                    <td class="highlight">自動バックアップ</td>
+                </tr>
+                <tr>
+                    <td><strong>費用</strong></td>
+                    <td>無料</td>
+                    <td>€20/月（約3,000円）</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>6. よくある質問</h2>
+        
+        <div class="plan-card">
+            <h3 style="margin-top: 0;">Q1: 無料トライアルで費用は発生しますか？</h3>
+            <p>
+                <strong>A:</strong> いいえ、14日間は完全無料です。クレジットカード登録も不要なので、トライアル期間中に費用が発生することは一切ありません。
+            </p>
+        </div>
+        
+        <div class="plan-card">
+            <h3 style="margin-top: 0;">Q2: 月2,500回の実行で足りますか？</h3>
+            <p>
+                <strong>A:</strong> はい、研修動画作成は手動実行が主なため、月2,500回で十分です。<br>
+                • 1日10本作成しても月300回程度<br>
+                • 仮に超過した場合もワークフローは停止せず、Proプランへのアップグレードで対応可能です
+            </p>
+        </div>
+        
+        <div class="plan-card">
+            <h3 style="margin-top: 0;">Q3: チームメンバーは何人まで利用できますか？</h3>
+            <p>
+                <strong>A:</strong> Starterプランでも<strong>無制限</strong>にユーザーを追加できます。追加料金は発生しません。
+            </p>
+        </div>
+        
+        <div class="plan-card">
+            <h3 style="margin-top: 0;">Q4: 解約は簡単にできますか？</h3>
+            <p>
+                <strong>A:</strong> はい、管理画面からいつでも解約できます。解約後、現在の請求期間の終わりまでサービスを利用できます。
+            </p>
+        </div>
+        
+        <div class="plan-card">
+            <h3 style="margin-top: 0;">Q5: 環境構築は誰が行いますか？</h3>
+            <p>
+                <strong>A:</strong> 三井田が担当いたします。ワークフローの移行、APIキーの再設定、動作確認まですべて対応します。チームメンバーは完成後、すぐに利用を開始できます。
+            </p>
+        </div>
+        
+        <div class="plan-card">
+            <h3 style="margin-top: 0;">Q6: データのセキュリティは問題ありませんか？</h3>
+            <p>
+                <strong>A:</strong> n8nクラウドはEU内（ドイツ）のサーバーでホストされており、<strong>SOC 2準拠</strong>のセキュリティプログラムを実施しています。データは暗号化され、安全に保管されます。
+            </p>
+        </div>
+
+        <h2>7. 費用まとめ</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>項目</th>
+                    <th>費用</th>
+                    <th>備考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight">
+                    <td><strong>n8n Starterプラン</strong></td>
+                    <td><strong>€20/月</strong></td>
+                    <td><strong>約3,640円/月</strong></td>
+                </tr>
+                <tr>
+                    <td>CloudConvert</td>
+                    <td>$9/年</td>
+                    <td>約1,350円/年（月割約110円）</td>
+                </tr>
+                <tr>
+                    <td>Shotstack</td>
+                    <td>$39/月</td>
+                    <td>約5,850円/月</td>
+                </tr>
+                <tr>
+                    <td>OpenAI API</td>
+                    <td>約$2〜4/月</td>
+                    <td>約300〜600円/月</td>
+                </tr>
+                <tr class="recommended-row">
+                    <td colspan="2"><strong>月額合計（n8nクラウド込み）</strong></td>
+                    <td><strong>約9,900〜10,600円/月</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="alert alert-success">
+            <strong>✅ コスト分析</strong><br><br>
+            • <strong>追加費用</strong>: 約3,640円/月（n8nクラウドのみ）<br>
+            • <strong>既存費用</strong>: 約6,300〜6,600円/月（API費用は変わらず）<br>
+            • <strong>メリット</strong>: チーム全体でワークフローを共有・管理できる<br>
+            • <strong>ROI</strong>: 1つのワークフローで数時間の作業を削減できれば、月3,640円は十分ペイします
+        </div>
+
+        <h2>8. ご提案内容まとめ</h2>
+        
+        <div class="plan-card" style="background: #f0f8ff; border: 3px solid #4a90e2;">
+            <h3 style="margin-top: 0; color: #2c5aa0;">📌 会社契約のご提案</h3>
+            
+            <table style="width: 100%; margin-top: 20px;">
+                <tr>
+                    <td style="padding: 10px; font-weight: bold; width: 200px;">契約サービス</td>
+                    <td style="padding: 10px;">n8nクラウド Starterプラン</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; font-weight: bold;">月額費用</td>
+                    <td style="padding: 10px;"><strong style="color: #e74c3c; font-size: 20px;">€20/月（約3,640円）</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; font-weight: bold;">初期費用</td>
+                    <td style="padding: 10px;">なし（14日間無料トライアル）</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; font-weight: bold;">環境構築</td>
+                    <td style="padding: 10px;">三井田が担当（1〜2日で完了予定）</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; font-weight: bold;">利用開始まで</td>
+                    <td style="padding: 10px;">契約後1〜2日程度（無料トライアル期間内に完了）</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 8px;">
+                <h4 style="color: #2c5aa0; margin-bottom: 15px;">✅ 期待される効果</h4>
+                <ul style="margin-left: 25px; line-height: 2;">
+                    <li><strong>業務効率化</strong>: 研修動画作成時間を大幅に短縮（数時間 → 数十分）</li>
+                    <li><strong>チーム全体で利用可能</strong>: 誰でもPPTXファイルをアップロードして動画作成</li>
+                    <li><strong>24時間稼働</strong>: いつでもどこでもシステムを利用可能</li>
+                    <li><strong>スケーラビリティ</strong>: 動画作成本数の増加に柔軟に対応</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="alert alert-success" style="margin-top: 30px;">
+            <strong>💡 投資対効果（ROI）</strong><br><br>
+            月額3,640円の追加コストで、チーム全体の動画作成業務を自動化できます。<br>
+            • 1本の動画作成にかかる時間: 手作業3時間 → 自動化30分（2.5時間の削減）<br>
+            • 月10本作成の場合: <strong>25時間の工数削減</strong><br>
+            • 時給換算で月額費用は十分にペイできる投資と考えられます
+        </div>
+
+        <div class="contact-section">
+            <h3>📝 契約のご承認をお願いいたします</h3>
+            <p style="font-size: 18px; margin: 20px 0;">
+                研修動画自動作成システムをチーム全体で本格運用するため、<br>
+                <strong>n8nクラウド Starterプラン（€20/月 ≒ 3,640円）の有料契約</strong>を<br>
+                会社としてご承認いただけますようお願い申し上げます。
+            </p>
+            <p style="font-size: 16px; opacity: 0.95; margin-top: 25px; background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px;">
+                <strong>契約の流れ：</strong><br>
+                1. まず14日間の無料トライアルで動作確認を実施（費用発生なし）<br>
+                2. 問題なければトライアル終了後に有料契約へ移行<br>
+                3. 設定作業は三井田が1〜2日で完了予定
+            </p>
+            <p style="font-size: 14px; opacity: 0.9; margin-top: 25px;">
+                ご質問・ご不明な点がございましたら、<br>
+                担当: 三井田史親までお気軽にお問い合わせください。
+            </p>
+        </div>
+    </div>
+</body>
+</html>
